@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-color: #F1F7ED;
+    height: 100%;
+}
+
+body {
+    color: #0E1513;
+    height: 100%;
+}
+
+
+@layer components {
+    .thick-shadow {
+      box-shadow: rgb(100, 100, 100) 0px 25px 8px -10px;
+    }
+}

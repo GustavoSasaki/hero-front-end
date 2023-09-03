@@ -1,0 +1,31 @@
+@keyframes slideInFromDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+#message {  
+
+  animation: 1s 0s 1 slideInFromDown;
+  
+}
+
+@keyframes slideInFromUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+
+#message-closed {  
+
+  animation: 1s 0s 1 slideInFromUp;
+  animation-fill-mode: forwards;
+}

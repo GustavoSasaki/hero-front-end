@@ -4,7 +4,7 @@ import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-top-heroes',
-  templateUrl: './top-heroes.component.html'
+  templateUrl: './top-heroes.component.html',
 })
 export class TopHeroesComponent {
   heroes: Hero[] = [];

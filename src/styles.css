@@ -18,4 +18,15 @@ body {
     .thick-shadow {
       box-shadow: rgb(100, 100, 100) 0px 25px 8px -10px;
     }
+
+    .container-nav {
+        max-width:min(calc(100vw - 40px), 800px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container {
+        max-width:min(calc(100vw - 40px - 2rem), calc(800px - 2rem));
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

@@ -1,0 +1,43 @@
+<div *ngIf="hero">
+
+    <div class=" bg-red-500 pt-8 pb-5 mb-3">
+        <div class="grid grid-cols-[218px_auto]  gap-10 container">
+            <div></div>
+            <div class="absolute">
+                <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="218" class=" rounded-lg shadow object-cover mb-2"
+                    style="aspect-ratio: 6 / 7;" />
+
+                <button type="button" (click)="goBack()" class="px-2 text-zinc-600 text-sm hover:text-accent flex">
+                    <mat-icon>keyboard_backspace</mat-icon>
+                    <p>go back</p>
+                </button>
+            </div>
+
+            <h2 class=" text-4xl capitalize">{{hero.name }}</h2>
+        </div>
+    </div>
+    <div class="grid grid-cols-[218px_auto]  gap-10 container min-h-[200px]">
+        <div></div>
+        <div>
+            <div class="text-lg ">
+                <label for="hero-name" class="font-[550]">Name: </label>
+                <span class="capitalize">{{hero.name}}</span>
+            </div>
+            <div class="text-lg mb-3">
+                <label for="power" class="font-[550]">Power: </label>
+                <span>{{hero.power}}</span>
+            </div>
+
+
+            <div><span class="font-[550]">id: </span>{{hero.id}}</div>
+            <div>
+                <label for="alter-name" class="font-[550]">Alter Ego: </label>
+                <span>{{hero.alter_ego}}</span>
+            </div>
+            <div>
+                <label for="gender" class="font-[550]">Gender: </label>
+                <span>{{hero.gender}}</span>
+            </div>
+        </div>
+    </div>
+</div>

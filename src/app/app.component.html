@@ -1,5 +1,5 @@
-<div class="h-full mx-auto" style="max-width:min(calc(100vw - 40px), 800px)">
-  <nav class="font-medium min-h-[80px] flex items-center text-2xl justify-stretch">
+<div class="h-full">
+  <nav class="font-medium min-h-[80px] flex items-center text-2xl justify-stretch container-nav">
     <a class="hover:text-accent" routerLink="/dashboard">Home</a>
     <div class="flex-grow flex flex-row-reverse gap-6 items-center">
       <a class="transition-all duration-300 hover:bg-accent border-accent border-4 hover:text-primary text-accent rounded-3xl px-4"
@@ -7,8 +7,6 @@
       <a class="hover:text-accent " routerLink="/heroes">About</a>
     </div>
   </nav>
-  <div class="mx-auto" style="max-width:calc(100% - 2rem)">
-    <router-outlet />
-  </div>
+  <router-outlet />
 </div>
 <app-messages class=" fixed bottom-0" />

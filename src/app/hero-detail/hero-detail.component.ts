@@ -7,17 +7,7 @@ import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
-  template: `
-<div *ngIf="hero">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
-  </div>
-  <button type="button" (click)="goBack()">go back</button>
-</div>
-  `,
+  templateUrl: 'hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
 })
 

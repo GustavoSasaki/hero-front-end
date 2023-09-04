@@ -1,6 +1,6 @@
 <div class=" bg-secondary text-primary text-xs w-screen py-1 transition-all hidden sm:block h-[45px]"
   [id]="this.messageId">
-  <div class="m-auto flex justify-between h-full" style="max-width:min(calc(100vw - 40px), 800px)">
+  <div class="flex justify-between h-full container-nav" >
     <div class="absolute">
       <div @addMessage *ngFor='let messages of messageService.messages' class="relative">
         <p>{{messages}}</p>

@@ -15,11 +15,12 @@ module.exports = {
         'secondary': {
           DEFAULT: "#243E36"
         },
-        'text':'#0E1513'
+        'text': '#0E1513'
       }
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
   ]
 }
 

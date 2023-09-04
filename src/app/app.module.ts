@@ -13,6 +13,7 @@ import { TopHeroesComponent } from './top-heroes/top-heroes.component';
 import { GetImgUrlPipe } from './get-img-url.pipe';
 import {MatIconModule} from '@angular/material/icon'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   providers: [],

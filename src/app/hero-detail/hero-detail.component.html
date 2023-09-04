@@ -1,43 +1,106 @@
 <div *ngIf="hero">
 
-    <div class=" bg-red-500 pt-8 pb-5 mb-3">
-        <div class="grid grid-cols-[218px_auto]  gap-10 container">
+    <div class=" bg-red-500 pt-10 md:pb-5 pb-1 mb-3">
+        <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
-            <div class="absolute">
-                <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="218" class=" rounded-lg shadow object-cover mb-2"
-                    style="aspect-ratio: 6 / 7;" />
+            <div class="md:absolute -mt-3 ">
+                <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="225"
+                    class=" rounded-lg shadow object-cover mb-2 mx-auto" style="aspect-ratio: 6 / 7;" />
 
-                <button type="button" (click)="goBack()" class="px-2 text-zinc-600 text-sm hover:text-accent flex">
+                <button *ngIf="!editMode" type="button" (click)="goBack()"
+                    class="px-2 text-zinc-600 text-sm hidden md:flex">
                     <mat-icon>keyboard_backspace</mat-icon>
                     <p>go back</p>
                 </button>
+
+                <div *ngIf="editMode" class="hidden items-center gap-4 md:flex">
+                    <button type="button" (click)="saveChanges()"
+                        class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                        <mat-icon *ngIf="!isUpdating">check</mat-icon>
+                        <div *ngIf="isUpdating" class="pr-1">
+                            <mat-spinner [diameter]="25" ></mat-spinner>
+                        </div>
+
+                        <p>Save</p>
+                    </button>
+
+                    <button type="button" class="px-3 py-1 text-xl rounded-3xl border-2" (click)="changeMode()">
+                        <p>Cancel</p>
+                    </button>
+                </div>
+
             </div>
 
-            <h2 class=" text-4xl capitalize">{{hero.name }}</h2>
+            <h2 class=" text-4xl capitalize md:text-left text-center">{{hero.name }}</h2>
+
+            <button (click)="changeMode()" [disabled]="editMode"
+                class="flex items-center justify-self-end disabled:invisible ml-auto md:ml-0 pt-1 md:pt-0">
+                <span class="mr-1">Edit</span>
+                <mat-icon>edit</mat-icon>
+            </button>
         </div>
     </div>
-    <div class="grid grid-cols-[218px_auto]  gap-10 container min-h-[200px]">
+    <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px]">
         <div></div>
         <div>
-            <div class="text-lg ">
-                <label for="hero-name" class="font-[550]">Name: </label>
-                <span class="capitalize">{{hero.name}}</span>
-            </div>
-            <div class="text-lg mb-3">
-                <label for="power" class="font-[550]">Power: </label>
-                <span>{{hero.power}}</span>
+            <div class="mb-1">
+                <div class="text-lg flex items-center gap-2 h-[32px]">
+                    <label for="heroName" class="font-[550]">Name: </label>
+                    <span *ngIf="!editMode" class="capitalize">{{hero.name}}</span>
+                    <input *ngIf="editMode" required name="heroName" id="heroName" minlength="1"
+                        class="py-[1px] text-lg capitalize rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="formHero.name" />
+                </div>
+                <p *ngIf="formHero.name.length == 0" class="text-red-500">Invalid name</p>
             </div>
 
+            <div class="mb-5">
+                <div class="text-lg  flex items-center gap-2 h-[32px]">
+                    <label for="power" class="font-[550]">Power: </label>
+                    <span *ngIf="!editMode">{{hero.power}}</span>
+                    <input *ngIf="editMode" required
+                        class="py-[1px] text-lg rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="formHero.power" />
+                </div>
+                <p *ngIf="formHero.power.length == 0" class="text-red-500">Invalid Power</p>
+            </div>
 
             <div><span class="font-[550]">id: </span>{{hero.id}}</div>
-            <div>
-                <label for="alter-name" class="font-[550]">Alter Ego: </label>
-                <span>{{hero.alter_ego}}</span>
+            <div class="flex items-center gap-2 mb-1 h-[32px]">
+                <label for="alter-name" class="font-[550] whitespace-nowrap">Alter Ego: </label>
+                <span *ngIf="!editMode">{{hero.alter_ego}}</span>
+                <input *ngIf="editMode"
+                    class="py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="formHero.alter_ego" />
             </div>
-            <div>
+            <div class="flex items-center gap-2 mb-1">
                 <label for="gender" class="font-[550]">Gender: </label>
-                <span>{{hero.gender}}</span>
+                <span *ngIf="!editMode">{{hero.gender}}</span>
+                <select *ngIf="editMode" required
+                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="formHero.gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non binary">Non Binary</option>
+                    <option value="no genre">No Genre</option>
+                </select>
             </div>
+        </div>
+
+        <div *ngIf="editMode" class="flex items-center gap-4 md:hidden pt-4">
+            <button type="button" (click)="saveChanges()"
+                class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                <mat-icon *ngIf="!isUpdating">check</mat-icon>
+                <div *ngIf="isUpdating" class="pr-1">
+                    <mat-spinner [diameter]="25" ></mat-spinner>
+                </div>
+
+                <p>Save</p>
+            </button>
+
+            <button type="button" class="px-3 py-1 text-xl rounded-3xl border-2" (click)="changeMode()">
+                <p>Cancel</p>
+            </button>
         </div>
     </div>
 </div>

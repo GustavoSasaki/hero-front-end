@@ -2,6 +2,19 @@ import { Injectable } from '@angular/core';
 import { MessageService } from './message.service';
 import { supabase } from './supabase';
 
+
+//to do:
+// get better messages for messages
+// find better colors
+//put in vercel
+//clean hero list
+//add color to hero
+//ad new heroes
+//add about
+
+//add descriptiom
+//add better text to generate
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,19 +25,19 @@ export class HeroService {
   }
 
   async getHeroes(){
-    this.messageService.add('HeroService: fetched heroes')
+    this.messageService.add('Fetched all heroes')
     const {data: heroes}= await supabase.from('heroes').select('*')
     return heroes ?? []
   }
 
   async getHero(id: number){
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    this.messageService.add(`Fetched hero id=${id}`);
     const {data: heroes}= await supabase.from('heroes').select('*').eq('id',id).single()
     return heroes
   }
 
   async getTopHeroes(){
-    this.messageService.add('HeroService: fetched top heroes')
+    this.messageService.add('Fetched top heroes')
     const {data: heroes}= await supabase.from('heroes').select('*').order('id',{ascending:false}).limit(8)
     return heroes ?? []
   }

@@ -4,7 +4,9 @@
         <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="group h-full self-center grid grid-rows-[min-content_auto] ">
             <div class="transition-all ease-out group-hover:thick-shadow group-hover:-translate-y-3 mx-auto">
                 <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="138"
-                    class="rounded-md shadow object-cover mx-auto" style="aspect-ratio: 5 / 6" />
+                    class="rounded-md shadow object-cover mx-auto" style="aspect-ratio: 5 / 6" 
+                    onError="this.src='https://dgufziqjubvbckrlwnjj.supabase.co/storage/v1/object/public/hero-back-end/user?t=2023-09-06T23%3A10%3A42.386Z'"
+                    />
             </div>
 
             <p class=" font-medium capitalize text-center text-sm text-slate-500 group-hover:text-slate-700 [box-shadow:rgb(88, 88, 88) 0px 40px 8px -10px] mt-2">

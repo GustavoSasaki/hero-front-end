@@ -1,14 +1,14 @@
-<div class="container">
-    <h2 class="text-3xl font-medium mb-8 text-center">Top Heroes</h2>
-    <div class="heroes-menu flex justify-evenly items-center gap-6 flex-wrap">
-        <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="group mb-4 ">
-            <div class="transition-all ease-out group-hover:thick-shadow group-hover:-translate-y-3">
+<div class="container-top-heroes mt-10">
+    <h2 class="text-3xl font-semibold mb-8 text-center text-slate-800">Top Heroes</h2>
+    <div class="heroes-menu grid  gap-4 grid-cols-[repeat(auto-fill,minmax(150px,_1fr))] justify-items-stretch">
+        <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="group h-full self-center grid grid-rows-[min-content_auto] ">
+            <div class="transition-all ease-out group-hover:thick-shadow group-hover:-translate-y-3 mx-auto">
                 <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="138"
-                    class="rounded-2xl shadow object-cover h-" style="aspect-ratio: 5 / 6" />
+                    class="rounded-md shadow object-cover mx-auto" style="aspect-ratio: 5 / 6" />
             </div>
 
-            <p class="text-center group-hover:text-accent [box-shadow:rgb(88, 88, 88) 0px 40px 8px -10px] mt-2">
-                {{hero.name | uppercase }}
+            <p class=" font-medium capitalize text-center text-sm text-slate-500 group-hover:text-slate-700 [box-shadow:rgb(88, 88, 88) 0px 40px 8px -10px] mt-2">
+                {{hero.name }}
             </p>
         </a>
     </div>

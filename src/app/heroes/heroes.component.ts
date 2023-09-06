@@ -5,16 +5,7 @@ import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
-  template: `
-  <ol>
-    <li *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{hero.id}}">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </a>
-    </li>
-  </ol>
-
-    `
+  templateUrl: 'heroes.component.html'
   ,
   styleUrls: ['./heroes.component.css']
 })

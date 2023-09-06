@@ -1,0 +1,92 @@
+<div *ngIf="hero">
+
+    <div class=" bg-red-500 pt-10 md:pb-5 pb-1 mb-3 ">
+        <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
+            <div></div>
+            <div class="md:absolute -mt-3 ">
+
+                <div class="w-[220px] h-[255px] rounded-lg bg-white mb-2 mx-auto shadow text-red-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="255px" viewBox="0 -960 960 960" width="220px">
+                        <path fill="#64748b"
+                            d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
+                    </svg>
+                </div>
+                <div class="hidden items-center gap-4 md:flex pl-2">
+                    <button (click)="addHero()" type="button"
+                        class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                        <div *ngIf="isAdditing" class="pr-1">
+                            <mat-spinner [diameter]="25"></mat-spinner>
+                        </div>
+
+                        <p>Confirm</p>
+                    </button>
+
+                    <button (click)="cancelAddition()" type="button" class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
+                        <p>Cancel</p>
+                    </button>
+                </div>
+
+            </div>
+
+            <h2 class=" text-4xl capitalize md:text-left text-center">New Hero</h2>
+        </div>
+    </div>
+    <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px]">
+        <div></div>
+        <div>
+            <div class="mb-1">
+                <div class="text-lg flex items-center gap-2 h-[32px]">
+                    <label for="heroName" class="font-[550]">Name: </label>
+                    <input [attr.disabled]="isAdditing" required name="heroName" id="heroName" minlength="1"
+                        class="disabled:text-slate-600 py-[1px] text-lg capitalize rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="hero.name" />
+                </div>
+                <p *ngIf="hero.name.length == 0 && tryAdded" class="text-red-500">Invalid name</p>
+            </div>
+
+            <div class="mb-5">
+                <div class="text-lg  flex items-center gap-2 h-[32px]">
+                    <label for="power" class="font-[550]">Power: </label>
+                    <input required [attr.disabled]="isAdditing"
+                        class="disabled:text-slate-600 py-[1px] text-lg rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="hero.power" />
+                </div>
+                <p *ngIf="hero.power.length == 0 && tryAdded" class="text-red-500">Invalid Power</p>
+            </div>
+
+            <div><span class="font-[550]">id: </span>??</div>
+            <div class="flex items-center gap-2 mb-1 h-[32px]">
+                <label for="alter-name" class="font-[550] whitespace-nowrap">Alter Ego: </label>
+                <input [attr.disabled]="isAdditing"
+                    class="disabled:text-slate-600 py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.alter_ego" />
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+                <label for="gender" class="font-[550]">Gender: </label>
+                <select [attr.disabled]="isAdditing"
+                    class="disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non binary">Non Binary</option>
+                    <option value="no genre">No Genre</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 md:hidden pt-4 pl-2">
+            <button (click)="addHero()" type="button"
+                class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                <div *ngIf="isAdditing" class="pr-1">
+                    <mat-spinner [diameter]="25"></mat-spinner>
+                </div>
+
+                <p>Confirm</p>
+            </button>
+
+            <button (click)="cancelAddition()" type="button" class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
+                <p>Cancel</p>
+            </button>
+        </div>
+    </div>
+</div>

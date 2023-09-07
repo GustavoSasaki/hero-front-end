@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { getTitle } from '../getTitle';
 import { Hero } from '../hero';
 import { MessageService } from '../message.service';
 import { BACK_END_URL } from '../variables';
@@ -23,10 +25,13 @@ export class HeroCreationComponent {
   tryAdded = false
 
 
-  constructor(
-    private messageService: MessageService,
-    private router: Router
-  ) { }
+  constructor(private messageService: MessageService,
+    private router: Router,
+    private readonly titleService: Title) {
+    const title = getTitle('Create')
+    this.titleService.setTitle(title)
+  }
+
 
   async addHero() {
     this.tryAdded = true

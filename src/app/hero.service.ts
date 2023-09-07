@@ -3,14 +3,13 @@ import { MessageService } from './message.service';
 import { supabase } from './supabase';
 
 
-//to do:
+//to-do:
 // find better colors
 //put in vercel
 //add color to hero
 //improve main page
-//add site-icon and html title
+//add site-icon
 //fix description not saving
-// fix when sabing new hero, phto moving and not all camp are locked
 // fix hero page
 
 //add backstory

@@ -4,8 +4,10 @@ import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { BACK_END_URL } from '../variables';
+import { BACK_END_URL, SITE_TITLE } from '../variables';
 import { MessageService } from '../message.service';
+import { Title } from '@angular/platform-browser';
+import { getTitle } from '../getTitle';
 
 @Component({
   selector: 'app-hero-detail',
@@ -23,8 +25,13 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private messageService: MessageService
-  ) { }
+    private messageService: MessageService,
+    private readonly titleService: Title
+  ) {
+    const title = getTitle('Details')
+    this.titleService.setTitle(title)
+  }
+
 
   ngOnInit(): void {
     this.getHero();

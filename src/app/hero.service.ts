@@ -4,12 +4,10 @@ import { supabase } from './supabase';
 
 
 //to do:
-// get better messages for messages
 // find better colors
 //put in vercel
-//clean hero list
 //add color to hero
-//ad new heroes
+//add new heroes
 //add about
 
 //add descriptiom

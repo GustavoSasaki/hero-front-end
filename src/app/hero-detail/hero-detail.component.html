@@ -5,9 +5,8 @@
             <div class="md:absolute -mt-3 ">
 
                 <img [alt]="hero.name" [src]="hero.id | getImgUrl" width="220"
-                    class=" rounded-lg shadow object-cover mb-2 mx-auto" style="aspect-ratio: 6 / 7;" 
-                    onError="this.src='https://dgufziqjubvbckrlwnjj.supabase.co/storage/v1/object/public/hero-back-end/user?t=2023-09-06T23%3A10%3A42.386Z'"
-                    />
+                    class=" rounded-lg shadow object-cover mb-2 mx-auto" style="aspect-ratio: 6 / 7;"
+                    onError="this.src='https://dgufziqjubvbckrlwnjj.supabase.co/storage/v1/object/public/hero-back-end/user?t=2023-09-06T23%3A10%3A42.386Z'" />
 
                 <button *ngIf="!editMode" type="button" (click)="goBack()"
                     class="px-2 text-slate-600 text-sm font-medium hidden md:flex">
@@ -76,6 +75,23 @@
                     class="py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
                     type="text" [(ngModel)]="formHero.alter_ego" />
             </div>
+
+            <div *ngIf="editMode || (hero.age && hero.age.length > 0)" class="flex items-center gap-2 mb-1">
+                <label for="gender" class="font-[550]">Age: </label>
+                <span *ngIf="!editMode">{{hero.age}}</span>
+                <select *ngIf="editMode" required
+                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="formHero.age">
+                    <option value=""></option>
+                    <option value="child">Child</option>
+                    <option value="teenager">Teenager</option>
+                    <option value="adult">Adult</option>
+                    <option value="old">Old</option>
+                    <option value="ancient">Ancient</option>
+                    <option value="vampire loli">Vampire Loli</option>
+                </select>
+            </div>
+
             <div class="flex items-center gap-2 mb-1">
                 <label for="gender" class="font-[550]">Gender: </label>
                 <span *ngIf="!editMode">{{hero.gender}}</span>
@@ -88,6 +104,21 @@
                     <option value="no genre">No Genre</option>
                 </select>
             </div>
+
+
+            <div class="flex items-center gap-2 mb-1">
+                <label for="gender" class="font-[550]">Color: </label>
+                <span *ngIf="!editMode">{{hero.color}}</span>
+                <select *ngIf="editMode" required
+                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="formHero.color">
+                    <option value=""></option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                </select>
+            </div>
+
         </div>
 
         <div *ngIf="editMode" class="flex items-center gap-4 md:hidden pt-4 pl-2">

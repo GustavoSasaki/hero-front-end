@@ -9,9 +9,12 @@ import { supabase } from './supabase';
 //add color to hero
 //add new heroes
 //add about
+//improve main page
+//add site-icon and html title
+//fix description not saving
+// fix when sabing new hero, phto moving
 
-//add descriptiom
-//add better text to generate
+//add descriptio
 
 @Injectable({
   providedIn: 'root'

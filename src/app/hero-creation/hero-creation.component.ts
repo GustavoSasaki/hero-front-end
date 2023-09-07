@@ -10,11 +10,13 @@ import { BACK_END_URL } from '../variables';
   styleUrls: ['./hero-creation.component.css']
 })
 export class HeroCreationComponent {
-  hero: Omit<Hero, 'id'> = {
+  hero: Omit<Hero, 'id' | 'description' | 'backstory'> = {
     gender: 'male',
     name: '',
     alter_ego: '',
-    power: ''
+    power: '',
+    age: '',
+    color: ''
 
   }
   isAdditing = false

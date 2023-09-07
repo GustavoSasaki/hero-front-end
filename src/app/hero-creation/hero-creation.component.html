@@ -21,7 +21,8 @@
                         <p>Confirm</p>
                     </button>
 
-                    <button (click)="cancelAddition()" type="button" class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
+                    <button (click)="cancelAddition()" type="button"
+                        class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
                         <p>Cancel</p>
                     </button>
                 </div>
@@ -61,6 +62,22 @@
                     class="disabled:text-slate-600 py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
                     type="text" [(ngModel)]="hero.alter_ego" />
             </div>
+
+            <div class="flex items-center gap-2 mb-1">
+                <label for="gender" class="font-[550]">Age: </label>
+                <select required
+                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.age">
+                    <option value=""></option>
+                    <option value="child">Child</option>
+                    <option value="teenager">Teenager</option>
+                    <option value="adult">Adult</option>
+                    <option value="old">Old</option>
+                    <option value="ancient">Ancient</option>
+                    <option value="vampire loli">Vampire Loli</option>
+                </select>
+            </div>
+
             <div class="flex items-center gap-2 mb-1">
                 <label for="gender" class="font-[550]">Gender: </label>
                 <select [attr.disabled]="isAdditing"
@@ -70,6 +87,18 @@
                     <option value="female">Female</option>
                     <option value="non binary">Non Binary</option>
                     <option value="no genre">No Genre</option>
+                </select>
+            </div>
+
+            <div class="flex items-center gap-2 mb-1">
+                <label for="gender" class="font-[550]">Color: </label>
+                <select required
+                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.color">
+                    <option value=""></option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
                 </select>
             </div>
         </div>
@@ -84,7 +113,8 @@
                 <p>Confirm</p>
             </button>
 
-            <button (click)="cancelAddition()" type="button" class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
+            <button (click)="cancelAddition()" type="button"
+                class="px-3 py-1 text-xl rounded-3xl border-2 text-slate-500 border-slate-500">
                 <p>Cancel</p>
             </button>
         </div>

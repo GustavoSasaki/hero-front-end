@@ -1,6 +1,6 @@
 <div *ngIf="hero">
 
-    <div class=" bg-red-500 pt-10 md:pb-5 pb-1 mb-3 ">
+    <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName">
         <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
             <div class="md:absolute -mt-3 ">
@@ -29,7 +29,7 @@
 
             </div>
 
-            <h2 class=" text-4xl capitalize md:text-left text-center">New Hero</h2>
+            <h2 class=" text-4xl capitalize md:text-left text-center text-slate-50  mb-2 md:mb-0">New Hero</h2>
         </div>
     </div>
     <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px] text-slate-800">

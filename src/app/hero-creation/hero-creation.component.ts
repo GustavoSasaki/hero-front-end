@@ -24,6 +24,8 @@ export class HeroCreationComponent {
   isAdditing = false
   tryAdded = false
 
+  bgTitleColors = ['bg-green-700','bg-purple-700','bg-red-700']
+
 
   constructor(private messageService: MessageService,
     private router: Router,

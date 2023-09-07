@@ -4,13 +4,13 @@ import { supabase } from './supabase';
 
 
 //to-do:
-//add color to hero
 //fix description not saving
 //discord info
 
 //add backstory
 // find better colors
 //improve main page
+//fix background error
 
 @Injectable({
   providedIn: 'root'

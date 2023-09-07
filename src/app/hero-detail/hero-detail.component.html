@@ -1,5 +1,5 @@
 <div *ngIf="hero">
-    <div class=" bg-red-500 pt-10 md:pb-5 pb-1 mb-3">
+    <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName" >
         <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
             <div class="md:absolute -mt-3 ">
@@ -33,10 +33,10 @@
 
             </div>
 
-            <h2 class=" text-4xl capitalize md:text-left text-center">{{hero.name }}</h2>
+            <h2 class=" text-4xl capitalize md:text-left text-center text-slate-50">{{hero.name }}</h2>
 
             <button (click)="changeMode()" [disabled]="editMode"
-                class="flex items-center justify-self-end disabled:invisible ml-auto md:ml-0 pt-1 md:pt-0">
+                class="flex items-center justify-self-end disabled:invisible ml-auto md:ml-0 pt-1 md:pt-0 text-slate-50">
                 <span class="mr-1">Edit</span>
                 <mat-icon>edit</mat-icon>
             </button>

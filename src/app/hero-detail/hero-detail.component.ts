@@ -32,6 +32,7 @@ export class HeroDetailComponent implements OnInit {
     this.titleService.setTitle(title)
   }
 
+  bgTitleColors = ['bg-green-700','bg-purple-700','bg-red-700']
 
   ngOnInit(): void {
     this.getHero();

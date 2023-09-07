@@ -14,7 +14,8 @@ import {MatIconModule} from '@angular/material/icon'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HeroCreationComponent } from './hero-creation/hero-creation.component';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { GetBgHeroNamePipe } from './get-bg-hero-name.pipe'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AboutComponent } from './about/about.component'
     TopHeroesComponent,
     GetImgUrlPipe,
     HeroCreationComponent,
-    AboutComponent
+    AboutComponent,
+    GetBgHeroNamePipe
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,6 @@ import { supabase } from './supabase';
 
 //to-do:
 //add color to hero
-//add site-icon
 //fix description not saving
 //discord info
 

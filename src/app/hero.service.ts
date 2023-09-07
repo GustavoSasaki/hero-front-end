@@ -5,7 +5,6 @@ import { supabase } from './supabase';
 
 //to-do:
 //fix description not saving
-//discord info
 
 //add backstory
 // find better colors

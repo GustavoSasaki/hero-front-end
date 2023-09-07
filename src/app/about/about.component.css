@@ -1,0 +1,4 @@
+li::before {
+    content: "• ";
+    color: #404e5f; 
+  }

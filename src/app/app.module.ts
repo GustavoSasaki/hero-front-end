@@ -13,7 +13,8 @@ import { GetImgUrlPipe } from './get-img-url.pipe';
 import {MatIconModule} from '@angular/material/icon'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { HeroCreationComponent } from './hero-creation/hero-creation.component'
+import { HeroCreationComponent } from './hero-creation/hero-creation.component';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeroCreationComponent } from './hero-creation/hero-creation.component'
     FormHeroComponent,
     TopHeroesComponent,
     GetImgUrlPipe,
-    HeroCreationComponent
+    HeroCreationComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

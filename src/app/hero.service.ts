@@ -7,14 +7,13 @@ import { supabase } from './supabase';
 // find better colors
 //put in vercel
 //add color to hero
-//add new heroes
-//add about
 //improve main page
 //add site-icon and html title
 //fix description not saving
-// fix when sabing new hero, phto moving
+// fix when sabing new hero, phto moving and not all camp are locked
+// fix hero page
 
-//add descriptio
+//add backstory
 
 @Injectable({
   providedIn: 'root'

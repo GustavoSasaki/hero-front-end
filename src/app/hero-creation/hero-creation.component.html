@@ -11,7 +11,7 @@
                             d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
                     </svg>
                 </div>
-                <div class="hidden items-center gap-4 md:flex pl-2">
+                <div class="hidden items-center gap-4 md:flex pl-2 overflow-x-visible max-w-[220px]">
                     <button (click)="addHero()" type="button"
                         class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
                         <div *ngIf="isAdditing" class="pr-1">
@@ -66,8 +66,8 @@
             <div class="flex items-center gap-2 mb-1">
                 <label for="gender" class="font-[550]">Age: </label>
                 <select required
-                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="hero.age">
+                    class="py-[1px]  disabled:text-slate-600  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.age" [attr.disabled]="isAdditing">
                     <option value=""></option>
                     <option value="child">Child</option>
                     <option value="teenager">Teenager</option>
@@ -93,8 +93,8 @@
             <div class="flex items-center gap-2 mb-1">
                 <label for="gender" class="font-[550]">Color: </label>
                 <select required
-                    class="py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="hero.color">
+                    class="py-[1px]  disabled:text-slate-600  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                    type="text" [(ngModel)]="hero.color" [attr.disabled]="isAdditing">
                     <option value=""></option>
                     <option value="red">Red</option>
                     <option value="green">Green</option>
@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-4 md:hidden pt-4 pl-2">
+        <div class="flex items-center gap-4 md:hidden pt-4 pl-2 overflow-x-visible max-w-[220px]">
             <button (click)="addHero()" type="button"
                 class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
                 <div *ngIf="isAdditing" class="pr-1">

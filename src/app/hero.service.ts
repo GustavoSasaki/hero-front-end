@@ -4,8 +4,6 @@ import { supabase } from './supabase';
 
 
 //to-do:
-//fix description not saving
-
 //add backstory
 // find better colors
 //improve main page

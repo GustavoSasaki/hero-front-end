@@ -34,7 +34,7 @@
     </div>
     <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px] text-slate-800">
         <div></div>
-        <div>
+        <div class="max-w-[500px]">
             <div class="mb-1">
                 <div class="text-lg flex items-center gap-2 h-[32px]">
                     <label for="heroName" class="font-[550]">Name: </label>
@@ -55,7 +55,6 @@
                 <p *ngIf="hero.power.length == 0 && tryAdded" class="text-red-500">Invalid Power</p>
             </div>
 
-            <div><span class="font-[550]">id: </span>??</div>
             <div class="flex items-center gap-2 mb-1 h-[32px]">
                 <label for="alter-name" class="font-[550] whitespace-nowrap">Alter Ego: </label>
                 <input [attr.disabled]="isAdditing"

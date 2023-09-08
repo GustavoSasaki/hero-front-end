@@ -5,10 +5,10 @@
 
 html {
     background-color: #F1F7ED;
-    height: 100%;
 }
 
 body {
+    min-height: 100vh;
     color: #0E1513;
 }
 
@@ -19,18 +19,18 @@ body {
     }
 
     .container-nav {
-        max-width:min(calc(100vw - 40px), 800px);
+        max-width:min(calc(100vw - 40px), 900px);
         margin-left: auto;
         margin-right: auto;
     }
     .container {
-        max-width:min(calc(100vw - 40px - 2rem), calc(800px - 2rem));
+        max-width:min(calc(100vw - 40px - 2rem), calc(900px - 2rem));
         margin-left: auto;
         margin-right: auto;
     }
 
     .container-top-heroes {
-        max-width:min(calc(100vw - 40px - 6rem), calc(800px - 6rem));
+        max-width:min(calc(100vw - 40px - 6rem), calc(900px - 6rem));
         margin-left: auto;
         margin-right: auto;
     }

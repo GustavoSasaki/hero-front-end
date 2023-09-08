@@ -1,5 +1,5 @@
 <div *ngIf="hero">
-    <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName" >
+    <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName">
         <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
             <div class="md:absolute -mt-3 ">
@@ -42,93 +42,87 @@
             </button>
         </div>
     </div>
-    <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px] text-slate-800">
+    <div class="md:grid grid-cols-[218px_auto]  gap-10 container min-h-[200px] text-slate-800 h-full">
         <div></div>
         <div>
-            <div class="mb-1">
-                <div class="text-lg flex items-center gap-2 h-[32px]">
-                    <label for="heroName" class="font-[550]">Name: </label>
-                    <span *ngIf="!editMode" class="capitalize">{{hero.name}}</span>
-                    <input *ngIf="editMode" required name="heroName" id="heroName" minlength="1"
-                        class="disabled:text-slate-600 py-[1px] text-lg capitalize rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                        type="text" [(ngModel)]="formHero.name" 
-                        [attr.disabled]="isUpdating"
-                        />
+            <div class="max-w-[500px]">
+                <div>
+                    <div class="text-lg flex items-center gap-2 ">
+                        <label for="heroName" class="font-[550]">Name: </label>
+                        <span *ngIf="!editMode" class="capitalize">{{hero.name}}</span>
+                        <input *ngIf="editMode" required name="heroName" id="heroName" minlength="1"
+                            class="mb-1 disabled:text-slate-600 py-[1px] text-lg capitalize rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                            type="text" [(ngModel)]="formHero.name" [attr.disabled]="isUpdating" />
+                    </div>
+                    <p *ngIf="formHero.name.length == 0" class="text-red-500">Invalid name</p>
                 </div>
-                <p *ngIf="formHero.name.length == 0" class="text-red-500">Invalid name</p>
-            </div>
 
-            <div class="mb-5">
-                <div class="text-lg  flex items-center gap-2 h-[32px]">
-                    <label for="power" class="font-[550]">Power: </label>
-                    <span *ngIf="!editMode">{{hero.power}}</span>
-                    <input *ngIf="editMode" required
-                        class="disabled:text-slate-600 py-[1px] text-lg rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                        type="text" [(ngModel)]="formHero.power" 
-                        [attr.disabled]="isUpdating"
-                        />
+                <div class="mb-5">
+                    <div class="text-lg  flex items-center gap-2 ">
+                        <label for="power" class="font-[550]">Power: </label>
+                        <span *ngIf="!editMode">{{hero.power}}</span>
+                        <input *ngIf="editMode" required
+                            class="disabled:text-slate-600 py-[1px] text-lg rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                            type="text" [(ngModel)]="formHero.power" [attr.disabled]="isUpdating" />
+                    </div>
+                    <p *ngIf="formHero.power.length == 0" class="text-red-500">Invalid Power</p>
                 </div>
-                <p *ngIf="formHero.power.length == 0" class="text-red-500">Invalid Power</p>
-            </div>
 
-            <div><span class="font-[550]">id: </span>{{hero.id}}</div>
-            <div class="flex items-center gap-2 mb-1 h-[32px]">
-                <label for="alter-name" class="font-[550] whitespace-nowrap">Alter Ego: </label>
-                <span *ngIf="!editMode">{{hero.alter_ego}}</span>
-                <input *ngIf="editMode"
-                    class="disabled:text-slate-600 py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="formHero.alter_ego" 
-                    [attr.disabled]="isUpdating"
-                    />
-            </div>
+                <div class="flex items-center gap-2 ">
+                    <label for="alter-name" class="font-[550] whitespace-nowrap">Alter Ego: </label>
+                    <span *ngIf="!editMode">{{hero.alter_ego}}</span>
+                    <input *ngIf="editMode"
+                        class="mb-1 disabled:text-slate-600 py-[1px] text-lg  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="formHero.alter_ego" [attr.disabled]="isUpdating" />
+                </div>
 
-            <div *ngIf="editMode || (hero.age && hero.age.length > 0)" class="flex items-center gap-2 mb-1">
-                <label for="gender" class="font-[550]">Age: </label>
-                <span *ngIf="!editMode">{{hero.age}}</span>
-                <select *ngIf="editMode" required
-                    class="disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="formHero.age"
-                    [attr.disabled]="isUpdating"
-                    >
-                    <option value=""></option>
-                    <option value="child">Child</option>
-                    <option value="teenager">Teenager</option>
-                    <option value="adult">Adult</option>
-                    <option value="old">Old</option>
-                    <option value="ancient">Ancient</option>
-                    <option value="vampire loli">Vampire Loli</option>
-                </select>
-            </div>
+                <div *ngIf="editMode || (hero.age && hero.age.length > 0)" class="flex items-center gap-2">
+                    <label for="gender" class="font-[550]">Age: </label>
+                    <span *ngIf="!editMode">{{hero.age}}</span>
+                    <select *ngIf="editMode" required
+                        class="mb-1 disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="formHero.age" [attr.disabled]="isUpdating">
+                        <option value=""></option>
+                        <option value="child">Child</option>
+                        <option value="teenager">Teenager</option>
+                        <option value="adult">Adult</option>
+                        <option value="old">Old</option>
+                        <option value="ancient">Ancient</option>
+                        <option value="vampire loli">Vampire Loli</option>
+                    </select>
+                </div>
 
-            <div class="flex items-center gap-2 mb-1">
-                <label for="gender" class="font-[550]">Gender: </label>
-                <span *ngIf="!editMode">{{hero.gender}}</span>
-                <select *ngIf="editMode" required
-                    class="disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="formHero.gender"
-                    [attr.disabled]="isUpdating">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="non binary">Non Binary</option>
-                    <option value="no genre">No Genre</option>
-                </select>
-            </div>
+                <div class="flex items-center gap-2">
+                    <label for="gender" class="font-[550]">Gender: </label>
+                    <span *ngIf="!editMode">{{hero.gender}}</span>
+                    <select *ngIf="editMode" required class="mb-1 disabled:text-slate-600 py-[1px] rounded-lg
+                        border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm" type="text"
+                        [(ngModel)]="formHero.gender" [attr.disabled]="isUpdating">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="non binary">Non Binary</option>
+                        <option value="no genre">No Genre</option>
+                    </select>
+                </div>
 
 
-            <div class="flex items-center gap-2 mb-1">
-                <label for="gender" class="font-[550]">Color: </label>
-                <span *ngIf="!editMode">{{hero.color}}</span>
-                <select *ngIf="editMode" required
-                    class="disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                    type="text" [(ngModel)]="formHero.color"
-                    [attr.disabled]="isUpdating"
-                    >
-                    <option value=""></option>
-                    <option value="red">Red</option>
-                    <option value="green">Green</option>
-                    <option value="purple">Purple</option>
-                </select>
+                <div *ngIf="editMode || hero.color" class="flex items-center gap-2">
+                    <label for="gender" class="font-[550]">Color: </label>
+                    <span *ngIf="!editMode">{{hero.color}}</span>
+                    <select *ngIf="editMode" required
+                        class="mb-1 disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
+                        type="text" [(ngModel)]="formHero.color" [attr.disabled]="isUpdating">
+                        <option value=""></option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="purple">Purple</option>
+                    </select>
+                </div>
+
+
             </div>
+            <p class=" mt-4">{{hero.backstory}}</p>
+
 
         </div>
 

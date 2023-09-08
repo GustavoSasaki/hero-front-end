@@ -4,7 +4,6 @@ import { supabase } from './supabase';
 
 
 //to-do:
-//add backstory
 // find better colors
 //improve main page
 //fix background error

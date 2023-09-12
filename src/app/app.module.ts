@@ -15,7 +15,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HeroCreationComponent } from './hero-creation/hero-creation.component';
 import { AboutComponent } from './about/about.component';
 import { GetBgHeroNamePipe } from './get-bg-hero-name.pipe';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { LoadingBarComponent } from './hero-creation/loading-bar/loading-bar.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component'
     HeroCreationComponent,
     AboutComponent,
     GetBgHeroNamePipe,
-    HomeComponent
+    HomeComponent,
+    LoadingBarComponent
   ],
   imports: [
     BrowserModule,

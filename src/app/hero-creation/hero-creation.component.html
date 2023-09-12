@@ -1,5 +1,4 @@
 <div *ngIf="hero">
-
     <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName">
         <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
@@ -119,3 +118,5 @@
         </div>
     </div>
 </div>
+
+<app-loading-bar [loading]="isAdditing" />

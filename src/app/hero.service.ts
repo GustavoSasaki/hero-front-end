@@ -5,7 +5,6 @@ import { supabase } from './supabase';
 
 //to-do:
 // find better colors
-//improve main page
 
 @Injectable({
   providedIn: 'root'

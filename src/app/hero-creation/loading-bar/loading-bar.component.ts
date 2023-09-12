@@ -10,6 +10,6 @@ export class LoadingBarComponent {
 
   @Input()
   set loading(value: boolean){
-    this.barWidth = !value ? '100%' : '0'
+    this.barWidth = value ? '100%' : '0'
   }
 }

@@ -1,15 +1,17 @@
 <div class="min-h-screen bg-gradient-to-b from-[#F1F7ED] to-[#d2dbd0]">
   <div class="bg-white shadow">
     <nav class="font-medium text-sm min-h-[50px] flex items-center justify-stretch container-nav text-slate-500">
-      <a class="hover:text-slate-700 "  routerLink="/">Home</a>
+      <a class="hover:text-slate-700 " routerLink="/">Home</a>
       <div class="flex-grow flex flex-row-reverse gap-6 items-center">
         <a class="transition-all duration-300 hover:bg-accent border-accent border-4 hover:text-primary text-accent rounded-3xl px-4"
           routerLink="/heroes">List</a>
-          <a class="hover:text-slate-700"  routerLink="/add">Add Hero</a>
+        <a class="hover:text-slate-700" routerLink="/add">Add Hero</a>
         <a class="hover:text-slate-700" routerLink="/about">About</a>
       </div>
     </nav>
   </div>
-  <router-outlet class="relative w-full" />
+  <div class="relative">
+    <router-outlet class="relative w-full" />
+  </div>
 </div>
 <app-messages class=" fixed bottom-0" />

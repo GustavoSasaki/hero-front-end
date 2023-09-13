@@ -1,5 +1,5 @@
 <div *ngIf="hero" class="bg-[#d7e0d2] min-h-[calc(100vh_-_50px)]" >
-    <div class="pt-10 md:pb-5 pb-1 mb-3 " [ngClass]="hero.color | getBgHeroName">
+    <div class="pt-10 md:pb-5 pb-1 mb-3 bg-bgHeroTitle">
         <div class="md:grid grid-cols-[218px_auto_auto]  gap-10 container">
             <div></div>
             <div class="md:absolute -mt-3 ">
@@ -105,21 +105,6 @@
                     </select>
                 </div>
 
-
-                <div *ngIf="editMode || hero.color" class="flex items-center gap-2">
-                    <label for="gender" class="font-[550]">Color: </label>
-                    <span *ngIf="!editMode">{{hero.color}}</span>
-                    <select *ngIf="editMode" required
-                        class="mb-1 disabled:text-slate-600 py-[1px]  rounded-lg border-transparent focus:border-secondary focus:ring-0 w-full shadow-sm"
-                        type="text" [(ngModel)]="formHero.color" [attr.disabled]="isUpdating">
-                        <option value=""></option>
-                        <option value="red">Red</option>
-                        <option value="green">Green</option>
-                        <option value="purple">Purple</option>
-                    </select>
-                </div>
-
-
             </div>
             <p class=" mt-4">{{hero.backstory}}</p>
 
@@ -145,4 +130,4 @@
     </div>
 </div>
 
-<div class="h-[40px]"></div>
+<div class="h-[40px] md:hidden"></div>

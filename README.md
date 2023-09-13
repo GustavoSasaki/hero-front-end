@@ -1,5 +1,5 @@
 ## About
-[Hero Creation](https://hero-front-end.vercel.app/) is a CRUD for super heroes int he format of a web-app.
+[Hero Creation](https://hero-front-end.vercel.app/) is a CRUD for super heroes with IA image generation in the format of a web-app.
 
 It was created based on Tour of Heroes tutorial with the object of improving mine angular and CSS skills. 
 

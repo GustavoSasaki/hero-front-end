@@ -16,7 +16,7 @@
 
                 <div *ngIf="editMode" class="hidden items-center gap-4 md:flex pl-2">
                     <button type="button" (click)="saveChanges()"
-                        class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                        class="px-3 py-1 text-primary text-xl bg-accent hover:bg-accent-brigther rounded-3xl flex items-center">
                         <mat-icon *ngIf="!isUpdating">check</mat-icon>
                         <div *ngIf="isUpdating" class="pr-1">
                             <mat-spinner [diameter]="25"></mat-spinner>
@@ -128,7 +128,7 @@
 
         <div *ngIf="editMode" class="flex items-center gap-4 md:hidden pt-4 pl-2">
             <button type="button" (click)="saveChanges()"
-                class="px-3 py-1 text-primary text-xl bg-blue-500 hover:bg-blue-600 rounded-3xl flex items-center">
+                class="px-3 py-1 text-primary text-xl bg-accent hover:bg-accent-brigther rounded-3xl flex items-center">
                 <mat-icon *ngIf="!isUpdating">check</mat-icon>
                 <div *ngIf="isUpdating" class="pr-1">
                     <mat-spinner [diameter]="25"></mat-spinner>

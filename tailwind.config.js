@@ -10,7 +10,9 @@ module.exports = {
           DEFAULT: '#F1F7ED',
         },
         'accent': {
-          DEFAULT: '#7CA982'
+          DEFAULT: '#3b82f6',
+          light:"#60a5fa",
+          brigther:"#1d4ed8"
         },
         'secondary': {
           DEFAULT: "#243E36"

@@ -18,7 +18,7 @@ module.exports = {
           DEFAULT: "#243E36"
         },
         'text': '#0E1513',
-        'bgHeroTitle': '#5d598c'
+        'bgHeroTitle': '#194284'
       }
     },
   },

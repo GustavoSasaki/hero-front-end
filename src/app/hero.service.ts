@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { MessageService } from './message.service';
 import { supabase } from './supabase';
 
-
-//to-do:
-// find better colors
-
 @Injectable({
   providedIn: 'root'
 })
